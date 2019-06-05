@@ -1,0 +1,27 @@
+
+maven仓库查找位置:https://search.maven.org/#browse
+
+maven仓库在外国，配置阿里云镜像：
+
+第一步:修改 maven 根目录下的 conf 文件夹中的 setting.xml 文件，在 mirrors 节点上，添加内容如下：
+
+< mirrors>
+< mirror>
+< id>alimaven< /id>
+< name>aliyun maven< /name>
+< url>http://maven.aliyun.com/nexus/content/groups/public/< /url>
+< mirrorOf>central< /mirrorOf>
+</ mirror> < /mirrors>
+第二步: pom.xml文件里添加：
+< repositories>
+< repository>
+< id>alimaven< /id>
+< name>aliyun maven< /name>
+< url>http://maven.aliyun.com/nexus/content/groups/public/< /url>
+< releases>
+< enabled>true< /enabled>
+< releases>
+< napshots>
+< enabled>false< /enabled>
+< /snapshots>
+< /repository> < /repositories>
